@@ -1,25 +1,40 @@
-def addition(a: float, b: float) -> float:
-	return a + b
+# Operations.py contains the `Operations` class with four static methods:
+# addition, subtraction, multiplication, and division for basic math operations.
 
-def subtraction(a: float, b: float) -> float:
-	return a - b
-
-def multiplication(a: float, b: float) -> float:
-	return a * b
-
-def division(a: float, b: float) -> float:
+class Operations:
     """
-    This function takes two numbers (a and b) and returns their quotient (a / b).
-    Dividing means breaking the first number into equal parts based on the second number.
-    BUT WAIT! There's an important check here: before we divide, we need to make sure that 'b' is not zero.
-    
-    Why? Because dividing by zero doesn't work. If we try to divide by zero, we get a big error!
-    
-    So, if 'b' is zero, we raise a 'ValueError', which is a way of telling the program, "Stop! You can't do this."
-    Example: if we call division(10.0, 2.0), it will return 5.0.
-    But if we call division(10.0, 0.0), it will raise a ValueError and say "Division by zero is not allowed."
+    Provides basic arithmetic operations without requiring an instance of the class.
     """
-    if b == 0:
-        # This part checks if 'b' is zero. If it is, we raise an error and stop the function.
-        raise ValueError("Division by zero is not allowed.")  # This sends an error message when someone tries to divide by zero.
-    return a / b  # If 'b' is not zero, we divide the first number (a) by the second number (b) and return the result.
+
+    @staticmethod
+    def addition(a: float, b: float) -> float:
+        """
+        Adds two numbers and returns their sum.
+        """
+        return a + b
+
+    @staticmethod
+    def subtraction(a: float, b: float) -> float:
+        """
+        Subtracts the second number from the first and returns the result.
+        """
+        return a - b
+
+    @staticmethod
+    def multiplication(a: float, b: float) -> float:
+        """
+        Multiplies two numbers and returns their product.
+        """
+        return a * b
+
+    @staticmethod
+    def division(a: float, b: float) -> float:
+        """
+        Divides the first number by the second and returns the quotient.
+        """
+        if b == 0:
+            # This part checks if 'b' is zero. If it is, we raise an error and stop the method.
+            # This sends an error message when someone tries to divide by zero.
+            raise ValueError("Division by zero is not allowed.")
+        # If 'b' is not zero, we divide the first number (a) by the second number (b) and return the result.
+        return a / b
